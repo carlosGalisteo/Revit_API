@@ -1,3 +1,26 @@
+# -*- coding: utf-8 -*-
+#Nuestra primera linea de código nos evita errores de código ASCII
+
+#BIBLIOTECAS
+import clr
+
+clr.AddReference('RevitAPI') 
+import Autodesk
+from Autodesk.Revit.DB import UnitUtils, Document
+
+clr.AddReference('RevitNodes') 
+import Revit
+clr.ImportExtensions(Revit.Elements) 
+clr.ImportExtensions(Revit.GeometryConversion) 
+
+clr.AddReference('RevitServices') 
+from RevitServices.Persistence import DocumentManager
+
+
+doc = DocumentManager.Instance.CurrentDBDocument
+
+
+
 def unidades_pies_a_metros(x):
 	"""
  	Uso: 
