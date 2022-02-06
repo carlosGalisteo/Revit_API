@@ -1,3 +1,30 @@
+#BIBLIOTECAS
+import clr
+import System
+from System.Collections.Generic import List
+
+clr.AddReference('RevitAPI') 
+import Autodesk
+from Autodesk.Revit.DB import *
+
+clr.AddReference('RevitAPIUI') 
+import Autodesk
+from Autodesk.Revit.UI.Selection import Selection, ObjectType
+
+clr.AddReference('RevitNodes') 
+import Revit
+clr.ImportExtensions(Revit.Elements) 
+clr.ImportExtensions(Revit.GeometryConversion) 
+
+clr.AddReference('RevitServices') 
+from RevitServices.Persistence import DocumentManager
+from RevitServices.Transactions import TransactionManager
+
+doc = DocumentManager.Instance.CurrentDBDocument
+uiapp = DocumentManager.Instance.CurrentUIApplication
+uidoc = uiapp.ActiveUIDocument
+
+
 def todos_elementos_por_familia(familia):
 	"""
  	Uso: 
